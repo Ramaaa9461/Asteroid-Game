@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GameManager">
+      <UniqueIdentifier>{4b5b83a1-b21d-43fa-812e-bded4848a616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{ea2a1ee9-57c2-4064-b42f-7a9e9b0482b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay">
+      <UniqueIdentifier>{cefc18aa-24c6-48ab-91e6-9ea40fe44725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Metiorito">
+      <UniqueIdentifier>{3b39e8ac-b8a7-4f69-b0ff-8e1fc8e16098}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nave">
+      <UniqueIdentifier>{2eb6b9ae-d393-4dfe-a453-c6f6fd2cd769}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Gameplay.cpp">
+      <Filter>Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="Meteorito.cpp">
+      <Filter>Metiorito</Filter>
+    </ClCompile>
+    <ClCompile Include="Ship.cpp">
+      <Filter>Nave</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.h">
+      <Filter>GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Gameplay.h">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Meteorito.h">
+      <Filter>Metiorito</Filter>
+    </ClInclude>
+    <ClInclude Include="Ship.h">
+      <Filter>Nave</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
