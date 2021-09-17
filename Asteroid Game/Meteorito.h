@@ -11,6 +11,7 @@ private:
 	int velocityX;
 	int radius;
 	Color color;
+	
 
 
 public:

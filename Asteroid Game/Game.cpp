@@ -21,7 +21,7 @@ namespace game
 	void execute()
 	{
 		init();
-		currentScreen = menu;
+		currentScreen = gameplay;
 
 		while (!WindowShouldClose())
 		{

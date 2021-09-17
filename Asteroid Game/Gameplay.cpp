@@ -1,44 +1,32 @@
 #include "gameplay.h"
 #include "raylib.h"
 #include "meteorito.h"
+#include "Ship.h"
 
-struct Triangle { Vector2 v1; Vector2 v2; Vector2 v3; };
-static void initPositionPlayer(Triangle& triangle);
 
 namespace game
 {
-
-	Triangle triangle;
-
+	Ship* ship;
 
 	void initGameplayScreen()
 	{
-		initPositionPlayer(triangle);
-
+		ship = new Ship({ 4,4 }, 4, 0, YELLOW);
+		
 	}
 
 	void updateGameplayScreen()
 	{
-
+		ship->move();
+		ship->Shoot();
 	}
 
 	void drawGameplayScreen()
 	{
 		ClearBackground(BLACK);
-		DrawTriangle(triangle.v1, triangle.v2, triangle.v3, YELLOW);
+		ship->draw();
+
 
 	}
 
-
 }
 
-void initPositionPlayer(Triangle& triangle)
-{
-	triangle.v2.x = 250;
-	triangle.v2.y = 250;
-	triangle.v3.x = 200;
-	triangle.v3.y = 200;
-	triangle.v1.x = 200;
-	triangle.v1.y = 300;
-
-}
