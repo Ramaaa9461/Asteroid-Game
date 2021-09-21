@@ -21,7 +21,7 @@ namespace game
 	void execute()
 	{
 		init();
-		currentScreen = gameplay;
+		currentScreen = menu;
 
 		while (!WindowShouldClose())
 		{
@@ -34,7 +34,7 @@ namespace game
 
 	static void init()
 	{
-		InitWindow(640, 480, "Ejemplo de estructura de juego v1");
+		InitWindow(640, 480, "Asteroid");
 
 		currentScreen = menu;
 

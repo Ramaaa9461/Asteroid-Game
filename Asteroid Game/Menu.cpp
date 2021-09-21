@@ -28,17 +28,17 @@ namespace game
 		if (updateButtons(button1))
 		{
 			//Llamar al play
-			button1.height = 30;
+	
 		}
 		if (updateButtons(button2))
 		{
 			// LLAmar creditos.
-			button2.x++;
+	
 		}
 		if (updateButtons(button3))
 		{
 			//Close Windows
-			button3.x++;
+
 		}
 
 
