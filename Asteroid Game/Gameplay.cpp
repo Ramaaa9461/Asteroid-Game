@@ -10,13 +10,14 @@ namespace game
 
 	void initGameplayScreen()
 	{
-		ship = new Ship({ 4,4 }, 4, 0, YELLOW);
+		ship = new Ship({ 4,4 }, { 4,4 }, 0, YELLOW);
 		
 	}
 
 	void updateGameplayScreen()
 	{
-		ship->move();
+		ship->Rotation();
+		ship->Move();
 		ship->Shoot();
 	}
 

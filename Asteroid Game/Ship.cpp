@@ -5,7 +5,7 @@
 static float playerBaseSize = 20.0f;
 static int playerMaxShoot = 10;
 
-Ship::Ship(Vector2 speed, int acceleration, int rotation, Color color)
+Ship::Ship(Vector2 speed, Vector2 acceleration, int rotation, Color color)
 {
     this->speed = speed ;
     this->acceleration = acceleration;
@@ -35,15 +35,61 @@ void Ship::Shoot()
         }
     }
 }
-void Ship::move()
+void Ship::Rotation()
+{
+    Direccion.x = GetMouseX() - position.x;
+    Direccion.y = GetMouseY() - position.y;
+
+    angulo = sqrt(pow(Direccion.x, 2) + pow(Direccion.y, 2));
+
+    angulo = atan(Direccion.y / Direccion.x);
+
+    //Ver deg y rad, y revisar caudrante
+    if (Direccion.x < GetScreenWidth() / 2 && Direccion.y < GetScreenHeight() / 2)
+    {
+        //2
+        angulo += 180;
+    }
+    if (Direccion.x < GetScreenWidth() / 2 && Direccion.y > GetScreenHeight() / 2)
+    {
+        //3
+        angulo += 180;
+    }
+    if (Direccion.x > GetScreenWidth() / 2 && Direccion.y > GetScreenHeight() / 2)
+    {
+        //4
+        angulo += 360;
+    }
+    rotation = angulo;
+
+    if (IsMouseButtonPressed(3))
+    {
+        DireccionNormalizada.x = Direccion.x / Direccion.x;
+        DireccionNormalizada.y = Direccion.y / Direccion.y;
+
+        acceleration.x += DireccionNormalizada.x;
+        acceleration.y += DireccionNormalizada.y;
+
+        FinalPosition.x = position.x + acceleration.x * GetFrameTime();
+        FinalPosition.y = position.y + acceleration.y * GetFrameTime();
+    }
+
+
+
+    
+
+
+    
+}
+void Ship::Move()
 {
     
 }
 void Ship::draw()
 {
-    Vector2 v1 = { position.x + sinf(rotation * DEG2RAD) * (shipHeight), position.y - cosf(rotation * DEG2RAD) * (shipHeight) };
-    Vector2 v2 = { position.x - cosf(rotation * DEG2RAD) * (playerBaseSize / 2), position.y - sinf(rotation * DEG2RAD) * (playerBaseSize / 2) };
-    Vector2 v3 = { position.x + cosf(rotation * DEG2RAD) * (playerBaseSize / 2), position.y + sinf(rotation * DEG2RAD) * (playerBaseSize / 2) };
+    Vector2 v1 = { FinalPosition.x + sinf(rotation * DEG2RAD) * (shipHeight), FinalPosition.y - cosf(rotation * DEG2RAD) * (shipHeight) };
+    Vector2 v2 = { FinalPosition.x - cosf(rotation * DEG2RAD) * (playerBaseSize / 2), FinalPosition.y - sinf(rotation * DEG2RAD) * (playerBaseSize / 2) };
+    Vector2 v3 = { FinalPosition.x + cosf(rotation * DEG2RAD) * (playerBaseSize / 2), FinalPosition.y + sinf(rotation * DEG2RAD) * (playerBaseSize / 2) };
     DrawTriangle(v1, v2, v3, color);
 }
 Vector2 Ship::getPosition()
